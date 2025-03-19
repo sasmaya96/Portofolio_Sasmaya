@@ -1,4 +1,4 @@
-/* RESET */
+/*RESET*/
 * {
     margin: 0;
     padding: 0;
@@ -13,6 +13,9 @@ body {
     color: white;
     text-align: center;
     overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* NAVIGASI */
@@ -183,6 +186,7 @@ nav {
     text-align: center;
     bottom: 0;
     width: 100%;
+    margin-top: auto;
 }
 
 /* DARK MODE */
