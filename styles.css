@@ -1,4 +1,4 @@
-/*RESET*/
+/* RESET */
 * {
     margin: 0;
     padding: 0;
@@ -24,15 +24,16 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 50px;
+    padding: 15px 50px;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
+    height: 70px; /* Pastikan ukuran navbar sama di semua halaman */
 }
 
 .nav_head {
-    font-size: 25px;
+    font-size: 26px; /* Ukuran seragam untuk semua halaman */
     font-weight: bold;
 }
 
@@ -46,7 +47,8 @@ nav {
 .nav-links li a {
     color: white;
     font-weight: bold;
-    padding: 10px;
+    font-size: 18px;
+    padding: 10px 20px;
     text-decoration: none;
 }
 
@@ -72,7 +74,7 @@ nav {
 /* SIDEBAR */
 .sidebar {
     position: fixed;
-    top: 60px;
+    top: 70px; /* Sesuai tinggi navbar */
     right: -50%;
     width: 50%;
     background: black;
@@ -98,11 +100,6 @@ nav {
     text-decoration: none;
 }
 
-.sidebar a:hover {
-    background-color: palevioletred;
-    color: black;
-}
-
 /* HOME SECTION */
 .home {
     display: flex;
@@ -113,17 +110,33 @@ nav {
     gap: 20px;
 }
 
+/* CONTAINER FOR PROFILE IMAGE AND DESCRIPTION */
+.profile-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid palevioletred; /* Add border to create a box */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px palevioletred; /* Add shadow to make it pop */
+    background-color: rgba(0, 0, 0, 0.7); /* Background color to distinguish the box */
+}
+
+/* PROFILE IMAGE */
 .profile-img {
     width: 200px;
     height: 200px;
     border-radius: 50%;
     border: 4px solid palevioletred;
     box-shadow: 0 0 15px palevioletred;
+    margin-right: 30px; /* Add spacing between image and description */
 }
 
+/* DESCRIPTION TEXT */
 .description {
     text-align: left;
     max-width: 500px;
+    color: white;
 }
 
 .description h1 {
@@ -146,10 +159,19 @@ nav {
     animation: typing 4s steps(40) infinite;
 }
 
+/* TYPING ANIMATION */
 @keyframes typing {
     from { width: 0; }
     to { width: 100%; }
 }
+
+
+.sidebar a:hover {
+    background-color: palevioletred;
+    color: black;
+}
+
+/* HOME SECTION */
 
 /* SOCIAL MEDIA */
 .social-icons {
@@ -209,8 +231,9 @@ nav {
     color: black;
 }
 
-/* Responsive */
+/* Responsive Adjustments */
 @media screen and (max-width: 768px) {
+    /* Hide nav links and show the hamburger menu on small screens */
     .nav-links {
         display: none;
     }
@@ -220,30 +243,39 @@ nav {
     .home {
         flex-direction: column;
         text-align: center;
-        padding: 100px 20px;
+        padding: 100px 20px; /* Add enough padding for small screens */
     }
-    .description {
-        text-align: center;
+    .profile-container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: 100%; /* Ensure the container takes full width on small screens */
+        padding: 20px 10px;
+    }
+    .profile-img {
+        margin-right: 0;
+        margin-bottom: 20px; /* Space between the image and description on small screens */
     }
     .social-icons {
         justify-content: center;
-    }
-    .sidebar {
-        width: 50%;
     }
 }
 
 /* PORTOFOLIO */
 #portofolio {
     text-align: center;
-    padding: 20px 50px;
-    margin-top: 80px;
+    padding: 100px 50px;
+    margin-top: -5px;
+   
 }
 
 .port_section {
     font-size: 40px;
     color: palevioletred;
     margin-bottom: 30px;
+    justify-content: 5px;
+    text-align: center;
+
 }
 
 .port_section span {
@@ -255,22 +287,6 @@ nav {
     color: black;
 }
 
-#portofolio {
-    text-align: center;
-    padding: 100px 50px;
-    margin-top: 80px;
-}
-.port_section {
-    font-size: 40px;
-    color: palevioletred;
-    margin-bottom: 30px;
-}
-
-.port_section span {
-    font-size: 40px;
-    color: rgb(252, 246, 248);
-    
-}
 
 /* Wrapper kartu portofolio */
 .project {
@@ -402,5 +418,6 @@ button:hover {
     background-color: #ff4f7b;
     box-shadow: 0 0 15px #ff4f7b;
 }
+
 
 
